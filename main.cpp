@@ -124,7 +124,7 @@ int main(int argc, char const *argv[])
     {
     while (iter < countIter && iter<10000000 && error > accuracy){
              // провереное эксперементальным путём оптимальное количество банд и размер вектора для расчёта матрицы 1024^2
-            #pragma acc parallel loop independent collapse(2) vector vector_length(256) gang num_gangs(1024) present(curmatrix,prevmatrix)
+            #pragma acc parallel loop independent collapse(2) vector vector_length(1024) gang num_gangs(1024) present(curmatrix,prevmatrix)
             for (size_t i = 1; i < N-1; i++)
             {
                 for (size_t j = 1; j < N-1; j++)
